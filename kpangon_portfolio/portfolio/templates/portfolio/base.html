@@ -1,0 +1,120 @@
+{% load static %}<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}KPANGON Olivier — Dirigeant institutionnel & entrepreneur agricole{% endblock %}</title>
+  <meta name="description" content="Site de Monsieur KPANGON Olivier : président de la PNUSS, promoteur de la ferme Les Béatitudes et président de l'UCP de Tori-Bossito (Bénin).">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['"Playfair Display"', 'serif'] },
+          colors: {
+            navy: { 50: '#EEF2F8', 100: '#D5DEEC', 700: '#173461', 800: '#0F2647', 900: '#0B1F3A', 950: '#071429' },
+            gold: { 300: '#E6CB75', 400: '#D9B84A', 500: '#C9A227', 600: '#A8841B' },
+            emerald: { 50: '#EDF7F2', 100: '#D3EDE1', 600: '#0F7A57', 700: '#0C6347', 800: '#0A4F39' },
+            olive: { 100: '#EEF1E2', 500: '#7A8B3D', 600: '#657433' },
+          },
+        },
+      },
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+    section[id] { scroll-margin-top: 5rem; }
+  </style>
+</head>
+<body class="bg-white text-slate-700 antialiased" x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 20">
+
+  <!-- NAVBAR -->
+  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+          :class="scrolled ? 'bg-navy-900/95 backdrop-blur shadow-lg' : 'bg-navy-900/70 backdrop-blur-sm'">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Navigation principale">
+      <a href="#accueil" class="font-serif text-xl font-semibold tracking-wide text-white">
+        KPANGON <span class="text-gold-400">Olivier</span>
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm font-medium text-slate-200 lg:flex">
+        <li><a class="transition hover:text-gold-400" href="#accueil">Accueil</a></li>
+        <li><a class="transition hover:text-gold-400" href="#apropos">À Propos</a></li>
+        <li><a class="transition hover:text-gold-400" href="#gouvernance-sanitaire">Gouvernance Sanitaire</a></li>
+        <li><a class="transition hover:text-gold-400" href="#ferme-beatitudes">Ferme Les Béatitudes</a></li>
+        <li><a class="transition hover:text-gold-400" href="#leadership-agricole">Leadership Agricole</a></li>
+        <li><a class="transition hover:text-gold-400" href="#competences">Compétences</a></li>
+        <li><a class="rounded-full bg-gold-500 px-4 py-2 text-navy-900 transition hover:bg-gold-400" href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="text-white lg:hidden" @click="open = !open" :aria-expanded="open" aria-label="Ouvrir le menu">
+        <i data-lucide="menu" x-show="!open" class="h-7 w-7"></i>
+        <i data-lucide="x" x-show="open" x-cloak class="h-7 w-7"></i>
+      </button>
+    </nav>
+
+    <div x-show="open" x-cloak x-transition @click.outside="open = false" class="border-t border-white/10 bg-navy-900 lg:hidden">
+      <ul class="space-y-1 px-5 py-4 text-slate-200" @click="open = false">
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#accueil">Accueil</a></li>
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#apropos">À Propos</a></li>
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#gouvernance-sanitaire">Gouvernance Sanitaire</a></li>
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#ferme-beatitudes">Ferme Les Béatitudes</a></li>
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#leadership-agricole">Leadership Agricole</a></li>
+        <li><a class="block rounded px-3 py-2 hover:bg-white/10" href="#competences">Compétences</a></li>
+        <li><a class="block rounded px-3 py-2 font-semibold text-gold-400 hover:bg-white/10" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-950 text-slate-300">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-3 lg:px-8">
+      <div>
+        <p class="font-serif text-xl text-white">KPANGON <span class="text-gold-400">Olivier</span></p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">Santé publique, agriculture et leadership institutionnel au service du développement du Bénin.</p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Navigation</p>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-white" href="#apropos">À Propos</a></li>
+          <li><a class="hover:text-white" href="#parcours">Parcours</a></li>
+          <li><a class="hover:text-white" href="#competences">Compétences</a></li>
+          <li><a class="hover:text-white" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Localisation</p>
+        <p class="mt-3 flex items-center gap-2 text-sm"><i data-lucide="map-pin" class="h-4 w-4 text-gold-400"></i> Tori-Bossito / Cotonou, Bénin</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-xs text-slate-500">
+      © {% now "Y" %} Monsieur KPANGON Olivier. Tous droits réservés.
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
+  <style>[x-cloak]{display:none !important}</style>
+</body>
+</html>

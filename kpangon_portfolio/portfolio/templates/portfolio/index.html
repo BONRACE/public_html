@@ -1,0 +1,196 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section id="accueil" class="relative overflow-hidden bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 pt-28 pb-20 lg:pt-36 lg:pb-28">
+  <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-emerald-700/20 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-gold-500/10 blur-3xl"></div>
+
+  <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-5 lg:px-8">
+    <div class="reveal lg:col-span-3">
+      <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-500/40 px-4 py-1 text-xs font-medium uppercase tracking-[0.2em] text-gold-300">
+        <i data-lucide="flag" class="h-3.5 w-3.5"></i> Bénin
+      </p>
+      <h1 class="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+        Monsieur <span class="text-gold-400">KPANGON Olivier</span>
+      </h1>
+      <p class="mt-5 text-lg font-medium italic text-emerald-100 sm:text-xl">
+        Dirigeant institutionnel, entrepreneur agricole &amp; leader d'opinion de haut niveau
+      </p>
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+        Une double expertise au service de la santé publique et du développement agro-sylvo-pastoral au Bénin.
+      </p>
+      <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+        <a href="#parcours" class="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3 font-semibold text-navy-900 shadow-lg transition hover:bg-gold-400">
+          Découvrir mon parcours <i data-lucide="arrow-down" class="h-4 w-4"></i>
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3 font-semibold text-white transition hover:bg-white/10">
+          Me contacter <i data-lucide="mail" class="h-4 w-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal mx-auto w-64 sm:w-80 lg:col-span-2 lg:w-full lg:max-w-sm">
+      <div class="relative">
+        <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-gold-500/60 to-emerald-600/50 blur-sm"></div>
+        <img src="{% static 'portfolio/img/portrait.jpg' %}" alt="Portrait de Monsieur KPANGON Olivier"
+             class="relative aspect-[3/4] w-full rounded-2xl border-4 border-white/90 object-cover object-top shadow-2xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section id="apropos" class="bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="reveal mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-gold-600">À Propos</p>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-navy-900 sm:text-4xl">Une vision au service des populations</h2>
+      <div class="mx-auto mt-5 h-1 w-20 rounded bg-gold-500"></div>
+      <p class="mt-6 text-lg leading-relaxed text-slate-600">
+        Au carrefour de la gouvernance sanitaire et du développement rural, Monsieur KPANGON Olivier porte la voix des usagers du système de santé
+        à l'échelle nationale tout en bâtissant, sur le terrain, une exploitation agro-sylvo-pastorale et en fédérant les producteurs de sa commune.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-8 lg:grid-cols-2">
+      <!-- Situation familiale -->
+      <article class="reveal rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-navy-800"><i data-lucide="heart-handshake" class="h-6 w-6"></i></span>
+          <h3 class="font-serif text-xl font-semibold text-navy-900">Situation familiale</h3>
+        </div>
+        <p class="mt-5 leading-relaxed text-slate-600">
+          Époux de <strong class="text-navy-900">Mme HOUNPKONOU Marie-Thérèse</strong>, père de
+          <strong class="text-navy-900">six enfants</strong>, dont deux poursuivent des études universitaires
+          et quatre sont scolarisés dans le secondaire et le primaire.
+        </p>
+        <p class="mt-4 text-sm text-slate-500">Un foyer attaché aux valeurs de transmission, d'éducation et de service.</p>
+      </article>
+
+      <!-- Distinction -->
+      <article class="reveal rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-gold-500/15 text-gold-600"><i data-lucide="award" class="h-6 w-6"></i></span>
+          <h3 class="font-serif text-xl font-semibold text-navy-900">Distinction</h3>
+        </div>
+        <p class="mt-5 leading-relaxed text-slate-600">
+          <strong class="text-navy-900">Prix de la recherche d'informations</strong> décerné lors de l'atelier de formation EMPRETEC sur le
+          développement de l'esprit d'entreprise (CNUCED), Cotonou, du 07 au 16 mars 2022.
+        </p>
+        <a href="{% static 'portfolio/img/certificat-empretec.jpg' %}" target="_blank" rel="noopener" class="mt-5 block overflow-hidden rounded-xl border border-slate-200">
+          <img src="{% static 'portfolio/img/certificat-empretec.jpg' %}" alt="Certificat EMPRETEC — Prix de la recherche d'informations décerné à KPANGON Olivier, Cotonou, mars 2022"
+               loading="lazy" class="h-56 w-full object-cover object-center transition duration-500 hover:scale-105">
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section id="parcours" class="bg-white py-20 lg:py-28">
+  <div class="mx-auto max-w-5xl px-5 lg:px-8">
+    <div class="reveal text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-gold-600">Parcours professionnel</p>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-navy-900 sm:text-4xl">Trois engagements, une même exigence</h2>
+      <div class="mx-auto mt-5 h-1 w-20 rounded bg-gold-500"></div>
+    </div>
+
+    <div class="relative mt-14 space-y-10 border-l-2 border-slate-200 pl-6 sm:pl-10">
+      {% for e in experiences %}
+      <section id="{{ e.ancre }}" class="reveal relative">
+        <span class="absolute -left-[2.15rem] top-6 flex h-6 w-6 items-center justify-center rounded-full ring-4 ring-white sm:-left-[3.15rem] {% if e.theme == 'sante' %}bg-navy-800{% else %}bg-emerald-600{% endif %}"></span>
+
+        <article class="overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:shadow-xl {% if e.theme == 'sante' %}border-navy-100{% else %}border-emerald-100{% endif %}"
+                 x-data="{ open: true }">
+          <header class="flex items-start gap-4 p-6 text-white {% if e.theme == 'sante' %}bg-gradient-to-r from-navy-900 to-navy-700{% else %}bg-gradient-to-r from-emerald-800 to-emerald-600{% endif %}">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15"><i data-lucide="{{ e.icone }}" class="h-6 w-6"></i></span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-serif text-xl font-semibold sm:text-2xl">{{ e.titre }}</h3>
+              <p class="mt-1 text-sm leading-snug {% if e.theme == 'sante' %}text-gold-300{% else %}text-emerald-100{% endif %}">{{ e.role }}</p>
+              {% if e.localite %}<p class="mt-2 inline-flex items-center gap-1 text-xs text-white/80"><i data-lucide="map-pin" class="h-3.5 w-3.5"></i> {{ e.localite }}</p>{% endif %}
+            </div>
+            <button type="button" @click="open = !open" class="rounded-full p-2 transition hover:bg-white/15" :aria-expanded="open" aria-label="Afficher ou masquer les missions">
+              <i data-lucide="chevron-down" class="h-5 w-5 transition-transform" :class="open ? 'rotate-180' : ''"></i>
+            </button>
+          </header>
+
+          <div x-show="open" x-transition class="p-6">
+            <p class="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">Missions</p>
+            <ul class="space-y-4">
+              {% for titre, desc in e.missions %}
+              <li class="flex gap-3">
+                <i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 {% if e.theme == 'sante' %}text-gold-500{% else %}text-emerald-600{% endif %}"></i>
+                <p class="leading-relaxed text-slate-600"><strong class="text-navy-900">{{ titre }} :</strong> {{ desc }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </article>
+      </section>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<section id="competences" class="bg-navy-900 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="reveal text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-gold-400">Compétences clés</p>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">Expertises</h2>
+      <div class="mx-auto mt-5 h-1 w-20 rounded bg-gold-500"></div>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+      {% for icone, titre, desc in competences %}
+      <article class="reveal rounded-2xl border border-white/10 bg-white/5 p-8 transition hover:-translate-y-1 hover:border-gold-500/50 hover:bg-white/10">
+        <span class="flex h-14 w-14 items-center justify-center rounded-xl bg-gold-500/15 text-gold-400"><i data-lucide="{{ icone }}" class="h-7 w-7"></i></span>
+        <h3 class="mt-6 font-serif text-xl font-semibold text-white">{{ titre }}</h3>
+        <p class="mt-3 leading-relaxed text-slate-300">{{ desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-slate-50 py-20 lg:py-28">
+  <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-5 lg:px-8">
+    <div class="reveal lg:col-span-2">
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-gold-600">Contact</p>
+      <h2 class="mt-3 font-serif text-3xl font-bold text-navy-900 sm:text-4xl">Échangeons</h2>
+      <div class="mt-5 h-1 w-20 rounded bg-gold-500"></div>
+      <p class="mt-6 leading-relaxed text-slate-600">Pour une sollicitation institutionnelle, un partenariat ou toute demande d'information, utilisez le formulaire ci-contre.</p>
+      <p class="mt-8 flex items-center gap-3 text-slate-700"><i data-lucide="map-pin" class="h-5 w-5 text-emerald-700"></i> Tori-Bossito / Cotonou, Bénin</p>
+    </div>
+
+    <div class="reveal lg:col-span-3">
+      {% if messages %}
+        {% for m in messages %}
+        <div class="mb-6 flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-800" role="status">
+          <i data-lucide="check-circle-2" class="h-5 w-5"></i> {{ m }}
+        </div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post" action="{% url 'portfolio:index' %}#contact" class="space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+          <label for="{{ field.id_for_label }}" class="mb-1.5 block text-sm font-medium text-slate-700">{{ field.label }}</label>
+          {{ field }}
+          {% for err in field.errors %}<p class="mt-1 text-sm text-red-600">{{ err }}</p>{% endfor %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-navy-900 px-7 py-3 font-semibold text-white transition hover:bg-navy-800 sm:w-auto">
+          Envoyer le message <i data-lucide="send" class="h-4 w-4"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
