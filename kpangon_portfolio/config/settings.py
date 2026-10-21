@@ -121,13 +121,26 @@ STATIC_URL = "static/"
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
+#MAILERS = {
+#    "default": {
+#        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+#    },
+#}
+
 MAILERS = {
     "default": {
-        "BACKEND": "django.core.mail.backends.console.EmailBackend",
+        "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+        "OPTIONS": {
+            "host": "smtp.gmail.com",
+            "port": 587,
+            "username": "bonracedolivierk@gmail.com",
+            "password": "unof pbwm bjsg oxmb",
+            "use_tls": True,
+        },
     },
 }
 
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-CONTACT_RECIPIENT = 'contact@example.com'  # à remplacer par l'adresse réelle
+CONTACT_RECIPIENT = 'olivierkpangon01@gmail.com'
+DEFAULT_FROM_EMAIL = 'bonracedolivierk@gmail.com'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
