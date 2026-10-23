@@ -127,6 +127,6 @@ MAILERS = {
     },
 }
 
-CONTACT_RECIPIENT = 'olivierkpangon01@gmail.com'
+CONTACT_RECIPIENT = 'kpangonolivier7@gmail.com'
 DEFAULT_FROM_EMAIL = 'bonracedolivierk@gmail.com'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
